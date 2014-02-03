@@ -4206,6 +4206,10 @@ var JSHINT = (function () {
     } else {
       advance("{");
       for (;;) {
+        if (state.tokens.next.value === "}") {
+          advance("}");
+          break;
+        }
         var importName;
         if (state.tokens.next.type === "default") {
           importName = "default";
