@@ -41,3 +41,4 @@ export class Foo {}
 export class List extends Array {}
 export default class Bar {}
 import {} from "ember";
+import "ember";

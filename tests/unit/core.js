@@ -698,6 +698,7 @@ exports.testES6Modules = function (test) {
     .addError(42, "'export' is only available in ES6 (use esnext option).")
     .addError(42, "'class' is available in ES6 (use esnext option) or Mozilla JS extensions (use moz).")
     .addError(43, "'import' is only available in ES6 (use esnext option).")
+    .addError(44, "'import' is only available in ES6 (use esnext option).")
     .test(src, {});
 
   var src2 = [
