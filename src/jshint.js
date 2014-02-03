@@ -150,6 +150,7 @@ var JSHINT = (function () {
                           // should be predefined
       yui         : true, // YUI variables should be predefined
       noyield     : true, // allow generators without a yield
+      await       : true, // allow await/deferred functions
 
       // Obsolete options
       onecase     : true, // if one case switch statements should be allowed
@@ -4300,6 +4301,15 @@ var JSHINT = (function () {
 
     return this;
   }).exps = true;
+
+  stmt("await", function () {
+    if (!state.option.await) {
+      warning("W126", state.tokens.curr);
+    }
+    expression(0);
+    return this;
+  }).exps = true;
+
 
   // Future Reserved Words
 

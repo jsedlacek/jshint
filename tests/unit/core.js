@@ -781,3 +781,18 @@ exports.testArrayPrototypeExtensions = function (test) {
   delete Array.prototype.undefinedPrototypeProperty;
   test.done();
 };
+
+exports.testES6Modules = function (test) {
+  var src = fs.readFileSync(__dirname + "/fixtures/await.js", "utf8");
+
+  TestRun(test)
+    .test(src, {await: true});
+
+  TestRun(test)
+    .addError(3, "'await' is only available with await option.")
+    .addError(4, "'await' is only available with await option.")
+    .addError(6, "'await' is only available with await option.")
+    .test(src, {});
+
+  test.done();
+};
