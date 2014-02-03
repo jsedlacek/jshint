@@ -782,7 +782,7 @@ exports.testArrayPrototypeExtensions = function (test) {
   test.done();
 };
 
-exports.testES6Modules = function (test) {
+exports.testAwait = function (test) {
   var src = fs.readFileSync(__dirname + "/fixtures/await.js", "utf8");
 
   TestRun(test)
